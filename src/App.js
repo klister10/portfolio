@@ -30,6 +30,18 @@ const portfolioItems = [
     linkURL: "https://www.tripadvisor.com/CheapFlightsHome",
     description: "I owned the flights mobile web which was written in ReactJS.",
   },
+  {
+    title: "Behind the Scenes",
+    imgURL: require("./assets/github_logo.webp"),
+    linkURL: "https://github.com/klister10",
+    description: "Visit my GitHub.",
+  },
+  {
+    title: "Let's Connect",
+    imgURL: require("./assets/linkedin_logo.webp"),
+    linkURL: "https://www.linkedin.com/in/kathleen-lister-perlman/",
+    description: "Connect with me on LinkedIn.",
+  },
 ];
 
 
