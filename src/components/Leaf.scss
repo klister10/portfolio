@@ -1,6 +1,6 @@
 .leaf {
   animation: rustle 12s infinite ease-in-out;
-  width: 180px;
+  width: 22.5vmin;
   transform-origin: center;
   .leafPath {
     stroke: $background-color;
@@ -9,10 +9,10 @@
   //transform: translate(-50%, -50%) rotate(var(--angle)deg);
 }
 .leaf.mediumSize {
-  width: 210px;
+  width: 26.25vmin;
 }
 .leaf.largeSize {
-  width: 240px;
+  width: 30vmin;
 }
 .leaf.lightColor {
   fill: #7DA97F; /* Pale Green */
