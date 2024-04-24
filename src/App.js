@@ -18,7 +18,7 @@ function Leaf({posX, posY, angle}) {
     position: 'absolute',
     left: `${posX}px`,
     top: `${posY}px`,
-    '--angle': `${angle}`,  // Include the --angle property with its value in degrees
+    '--angle': `${angle}deg`,  // Include the --angle property with its value in degrees
   };
 
   function getRandomSize() {
@@ -46,7 +46,7 @@ function Leaf({posX, posY, angle}) {
 function App() {
 
   const generateLeaves = () => {
-    const density = 0.001;  // Example density, adjust based on desired coverage
+    const density = 0.002;  // Example density, adjust based on desired coverage
     const radius = Math.min(window.innerWidth, window.innerHeight) / 2.25;  // Radius of the circle in the center
     const totalArea = window.innerWidth * window.innerHeight;
     const circleArea = Math.PI * radius * radius;
