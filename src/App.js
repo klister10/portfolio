@@ -1,38 +1,70 @@
 import './App.scss';
 import Leaf from './components/Leaf';
 import TitleCard from './components/TitleCard';
+import React, { useEffect, useState } from 'react';
 
 
 function App() {
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const generateLeaves = () => {
-    const density = 0.001;  // Example density, adjust based on desired coverage
-    const radius = Math.min(window.innerWidth, window.innerHeight) / 2.1;  // Radius of the circle in the center
-    const totalArea = window.innerWidth * window.innerHeight;
-    const circleArea = Math.PI * radius * radius;
-    const effectiveArea = totalArea - circleArea;  // Total area minus the area of the central circle
+    const density = 0.001; // adjust based on desired coverage
+    const minLeafWidth = .1;
+    const maxLeafWidth = .5;
+    let radiusX, radiusY;
+    if(windowSize.width <= windowSize.height) {
+      radiusX = windowSize.width / (2 + minLeafWidth); // Radius along the x-axis
+      radiusY = windowSize.height / (2 + maxLeafWidth); // Radius along the y-axis
+    } else {
+      radiusX = windowSize.width / (2 + maxLeafWidth); // Radius along the x-axis
+      radiusY = windowSize.height / (2 + minLeafWidth); // Radius along the y-axis
+    }
+    const totalArea = windowSize.width * windowSize.height;
+    const ellipseArea = Math.PI * radiusX * radiusY; // Area of the ellipse
+    const effectiveArea = totalArea - ellipseArea; // Total area minus the area of the central ellipse
     const numLeaves = Math.floor(density * effectiveArea);
 
     const leaves = [];
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
+    const centerX = windowSize.width / 2;
+    const centerY = windowSize.height / 2;
 
     for (let i = 0; i < numLeaves; i++) {
-      let posX, posY, distance, angle;
-      do {
-        posX = Math.random() * window.innerWidth;
-        posY = Math.random() * window.innerHeight;
-        // Calculate the distance from the center
-        distance = Math.sqrt((posX - centerX) ** 2 + (posY - centerY) ** 2);
+        let posX, posY, distance;
+        do {
+            posX = Math.random() * windowSize.width;
+            posY = Math.random() * windowSize.height;
+            // Calculate the normalized distance from the center to determine if inside the ellipse
+            distance = Math.sqrt(
+                ((posX - centerX) ** 2) / (radiusX ** 2) +
+                ((posY - centerY) ** 2) / (radiusY ** 2)
+            );
+        } while (distance < 1); // Continue looping until a point outside the ellipse is found
 
-        angle = Math.atan2(centerY - posY, centerX - posX) * 180 / Math.PI + 90; // Convert radians to degrees and adjust rotation
-      } while (distance < radius); // Continue looping until a point outside the circle is found
-
-      console.log(posX, posY, angle);
-      leaves.push(Leaf({ posX, posY, angle }));
+        const angle = Math.atan2(centerY - posY, centerX - posX) * 180 / Math.PI + 90; // Convert radians to degrees and adjust rotation
+        console.log(posX, posY, angle);
+        leaves.push(Leaf({ posX, posY, angle }));
     }
     return leaves;
-  }
+};
+
 
   return (
     <div className="App">
@@ -42,5 +74,5 @@ function App() {
   );
 }
 
-
 export default App;
+
