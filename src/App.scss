@@ -3,6 +3,38 @@
   height: 100%;
   background-color: #183028;
   color: #F5F5F5;
+  overflow: hidden;
+
+  
+  .leaf {
+    animation: rustle 3s infinite ease-in-out;
+    width: 20px;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(var(--angle)deg);
+  }
+  .leaf.mediumSize {
+    width: 50px;
+  }
+  .leaf.largeSize {
+    width: 80px;
+  }
+  .leaf.lightColor {
+    fill: #90EE90; /* Pale Green */
+  }
+
+  .leaf.mediumColor {
+    fill: #4CAF50; /* Lime Green */
+  }
+
+  .leaf.darkColor {
+    fill: #006400; /* Dark Green */
+  }
+}
+
+@keyframes rustle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-6deg); }
+  75% { transform: rotate(6deg); }
 }
 
 
