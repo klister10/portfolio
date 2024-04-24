@@ -7,7 +7,7 @@ function App() {
 
   const generateLeaves = () => {
     const density = 0.001;  // Example density, adjust based on desired coverage
-    const radius = Math.min(window.innerWidth, window.innerHeight) / 2.25;  // Radius of the circle in the center
+    const radius = Math.min(window.innerWidth, window.innerHeight) / 2.1;  // Radius of the circle in the center
     const totalArea = window.innerWidth * window.innerHeight;
     const circleArea = Math.PI * radius * radius;
     const effectiveArea = totalArea - circleArea;  // Total area minus the area of the central circle
