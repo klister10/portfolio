@@ -1,0 +1,18 @@
+.carousel{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .navButton{
+    color: $secondary-color;
+    font-size: 2vmin;
+    padding: 1vmin;
+    margin: 1vmin;
+    cursor: pointer;
+    font-size: 20vmin;
+  }
+
+  .navButton:hover{
+    color: $accent-color;
+  }
+}

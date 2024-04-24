@@ -1,6 +1,7 @@
 import './App.scss';
 import Leaf from './components/Leaf';
 import TitleCard from './components/TitleCard';
+import Carousel from './components/Carousel';
 import React, { useEffect, useState } from 'react';
 
 
@@ -59,7 +60,7 @@ function App() {
   const generateLeaves = () => {
     const density = 0.001; // adjust based on desired coverage
     const minLeafWidth = .1;
-    const maxLeafWidth = .5;
+    const maxLeafWidth = .2;
     let radiusX, radiusY;
     if(windowSize.width <= windowSize.height) {
       radiusX = windowSize.width / (2 + minLeafWidth); // Radius along the x-axis
@@ -94,13 +95,21 @@ function App() {
         leaves.push(Leaf({ posX, posY, angle }));
     }
     return leaves;
-};
+  };
+
+  const getCarouselContent = () => {
+    return [
+      <TitleCard />,
+    ];
+  }
 
 
   return (
     <div className="App">
       {generateLeaves()}
-      <TitleCard />
+      <Carousel>
+        {getCarouselContent()}
+      </Carousel>
     </div>
   );
 }
