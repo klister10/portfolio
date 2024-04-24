@@ -16,6 +16,7 @@ export default function Leaf({posX, posY, angle}) {
     left: `${posX}px`,
     top: `${posY}px`,
     '--angle': `${angle}deg`,  // Include the --angle property with its value in degrees
+    '--hover-shift': `0deg`,
   };
 
   function getRandomSize() {

@@ -11,6 +11,9 @@ function App() {
   });
 
   useEffect(() => {
+
+    setLeafShiftOnMouseMove();
+
     const handleResize = () => {
       setWindowSize({
         width: window.innerWidth,
@@ -24,6 +27,34 @@ function App() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    setLeafShiftOnMouseMove();
+  }, [windowSize]);
+
+
+
+  const setLeafShiftOnMouseMove = () => {
+    const leaves = document.querySelectorAll('.leaf');
+    document.addEventListener('mousemove', function(e) {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+  
+      leaves.forEach(leaf => {
+        const leafRect = leaf.getBoundingClientRect();
+        const leafX = leafRect.left + leafRect.width / 2;
+        const leafY = leafRect.top + leafRect.height / 2;
+        const distance = Math.sqrt(Math.pow(leafX - mouseX, 2) + Math.pow(leafY - mouseY, 2));
+  
+        if (distance < 100) { // Adjust this value based on how sensitive you want it to be
+          //const angle = Math.atan2(leafY - mouseY, leafX - mouseX) * 180 / Math.PI;
+          leaf.style.setProperty('--hover-shift', `10deg`);
+        } else {
+          leaf.style.setProperty('--hover-shift', `0deg`);
+        }
+      });
+    });
+  }
 
   const generateLeaves = () => {
     const density = 0.001; // adjust based on desired coverage
