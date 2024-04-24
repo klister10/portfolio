@@ -1,8 +1,36 @@
 import './App.scss';
 import Leaf from './components/Leaf';
 import TitleCard from './components/TitleCard';
+import DemoCard from './components/DemoCard';
 import Carousel from './components/Carousel';
 import React, { useEffect, useState } from 'react';
+//import { portfolioItems } from './data/portfolioItems';
+
+const portfolioItems = [
+  {
+    title: "Amira Learning",
+    videoURL: require("./assets/amira_demo.mov"),
+    linkURL: "https://www.amiralearning.com/",
+    description: "An AI based Reading Tutor. I worked with this ed-tech startup as Front-End Tech Lead.",
+  },
+  {
+    title: "Wander Match",
+    videoURL: require("./assets/wander_match_demo.mp4"),
+    description: "A flight destination discovery app using the skyscanner and google places apis.",
+  },
+  {
+    title: "Tax Calculator",
+    videoURL: require("./assets/tax_calculator_demo.mov"),
+    description: "A tool to determine tax withholding for people with variable income.",
+    linkURL: "https://master.d2fk9tf53c80qb.amplifyapp.com/",
+  },
+  {
+    title: "TripAdvisor",
+    imgURL: require("./assets/TA_screen_shot.png"),
+    linkURL: "https://www.tripadvisor.com/CheapFlightsHome",
+    description: "I owned the flights mobile web which was written in ReactJS.",
+  },
+];
 
 
 function App() {
@@ -91,16 +119,24 @@ function App() {
         } while (distance < 1); // Continue looping until a point outside the ellipse is found
 
         const angle = Math.atan2(centerY - posY, centerX - posX) * 180 / Math.PI + 90; // Convert radians to degrees and adjust rotation
-        console.log(posX, posY, angle);
         leaves.push(Leaf({ posX, posY, angle }));
     }
     return leaves;
   };
 
   const getCarouselContent = () => {
-    return [
-      <TitleCard />,
-    ];
+    let content = [];
+
+    //add title card;
+    content.push(<TitleCard />);
+
+    //add portfolio items;
+    for (let i = 0; i < portfolioItems.length; i++) {
+      const item = portfolioItems[i];
+      content.push(<DemoCard title={item.title} videoURL={item.videoURL} imgURL={item.imgURL} linkURL={item.linkURL} description={item.description} />);
+    }
+
+    return content;
   }
 
 

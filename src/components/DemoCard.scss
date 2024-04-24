@@ -1,0 +1,42 @@
+.demoCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //background-color: rgba(138, 168, 146, 0.3);
+  padding: 20px;
+  border-radius: 30px;    
+  max-width: 51vmin;
+  
+  .title{
+    font-size: 6vmin;
+  }
+  .thumbnail{
+    width: 50vmin;
+    height: 50vmin;
+    border-radius: 30px;
+    margin-top: 2vmin;
+    border: 4px solid #8AA892;
+
+    .videoPlayer{
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+    }
+
+    .projectThumb{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+    }
+  }
+  .description {
+    width: 40vmin;
+    text-align: center;
+  }
+}
+
+.demoCard.clickable{
+  cursor: pointer;
+}

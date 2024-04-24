@@ -9,7 +9,7 @@ $secondary-color: #8AA892;
   background-color: $background-color;
   color: $text-color;
   overflow: hidden;
-  font-family: "Bodoni Moda", serif;
+  font-family: "Platypi", serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,3 +28,4 @@ Golden Amber (Accent) - #FFC107: Bright and eye-catching, this color can be used
 @import "./components/Leaf.scss";
 @import "./components/TitleCard.scss";
 @import "./components/Carousel.scss";
+@import "./components/DemoCard.scss";
