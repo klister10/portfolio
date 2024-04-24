@@ -1,0 +1,32 @@
+.titleCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //background-color: rgba(138, 168, 146, 0.3);
+  padding: 20px;
+  border-radius: 30px;
+  
+  .name{
+    font-size: 3vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .first{
+      font-size: 8vmin;
+      font-weight: bold;
+    }
+    .last{
+      margin-top: -2vmin;
+    }
+  }
+  .profilePhoto{
+    width: 40vmin;
+    height: 40vmin;
+    border-radius: 30px;
+    margin-top: 3vmin;
+    border: 4px solid #8AA892;
+  }
+}

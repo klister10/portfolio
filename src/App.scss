@@ -1,23 +1,26 @@
 .App {
-  text-align: center;
+  
   height: 100%;
   background-color: #183028;
   color: #F5F5F5;
   overflow: hidden;
-  font-family: 'Bodoni Poster', serif;
+  font-family: "Bodoni Moda", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   
   .leaf {
-    animation: rustle 6s infinite ease-in-out;
-    width: 60px;
+    animation: rustle 12s infinite ease-in-out;
+    width: 120px;
     transform-origin: center;
     //transform: translate(-50%, -50%) rotate(var(--angle)deg);
   }
   .leaf.mediumSize {
-    width: 90px;
+    width: 180px;
   }
   .leaf.largeSize {
-    width: 120px;
+    width: 240px;
   }
   .leaf.lightColor {
     fill: #90EE90; /* Pale Green */
