@@ -1,5 +1,3 @@
-import "./TitleCard.scss";
-
 export default function TitleCard() {
 
   return (

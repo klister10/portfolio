@@ -1,0 +1,43 @@
+.leaf {
+  animation: rustle 12s infinite ease-in-out;
+  width: 120px;
+  transform-origin: center;
+  .leafPath {
+    stroke: $background-color;
+    stroke-width: .1;
+  }
+  //transform: translate(-50%, -50%) rotate(var(--angle)deg);
+}
+.leaf.mediumSize {
+  width: 180px;
+}
+.leaf.largeSize {
+  width: 240px;
+}
+.leaf.lightColor {
+  fill: #90EE90; /* Pale Green */
+}
+
+.leaf.mediumColor {
+  fill: #4CAF50; /* Lime Green */
+}
+
+.leaf.darkColor {
+  fill: #006400; /* Dark Green */
+}
+
+
+@keyframes rustle {
+  0%, 100% { 
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(var(--angle)); 
+  }
+  25% { 
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(calc(var(--angle) - 6deg));
+  } /* Subtract 6deg from the angle */
+  75% { 
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(calc(var(--angle) + 6deg));
+  } /* Add 6deg to the angle */
+}

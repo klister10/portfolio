@@ -35,7 +35,7 @@ export default function Leaf({posX, posY, angle}) {
 
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" className={leafClass} style={style}>
-        <path d="M5,1 Q2,5 5,9 Q8,5 5,1" className="leaf-path"/>
+      <path d="M5,1 Q2,5 5,9 Q8,5 5,1" className="leafPath"/>
     </svg>
   );
 }
