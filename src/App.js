@@ -32,13 +32,13 @@ const portfolioItems = [
   },
   {
     title: "Behind the Scenes",
-    imgURL: "/assets/github_logo.webp",
+    imgURL: "/assets/github_logo.png",
     linkURL: "https://github.com/klister10",
     description: "Visit my GitHub.",
   },
   {
     title: "Let's Connect",
-    imgURL: "/assets/linkedin_logo.webp",
+    imgURL: "/assets/linkedin_logo.png",
     linkURL: "https://www.linkedin.com/in/kathleen-lister-perlman/",
     description: "Connect with me on LinkedIn.",
   },
