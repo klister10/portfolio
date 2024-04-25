@@ -6,7 +6,7 @@ export default function TitleCard() {
         <div className="first">Kathleen</div>
         <div className="last">Lister-Perlman</div>
       </div>
-      <img className="profilePhoto" src={require("../assets/profile_photo.jpg")} alt="Profile Photo" />
+      <img className="profilePhoto" src={"/assets/profile_photo.jpg"} alt="Profile Photo" />
     </div>
   );
 }
