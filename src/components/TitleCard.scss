@@ -30,3 +30,17 @@
     border: 4px solid #8AA892;
   }
 }
+
+.titleCard.mobile {
+  .name{
+    font-size: 6vmin;
+    margin-bottom: 2vmin;
+    .first{
+      font-size: 14vmin;
+    }
+  }
+  .profilePhoto{
+    width: 84vmin;
+    height: 84vmin;
+  }
+}

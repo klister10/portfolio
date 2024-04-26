@@ -1,7 +1,11 @@
+import { isMobile } from "../utils";
+
 export default function TitleCard() {
 
+  const titleCardClass = isMobile() ? "titleCard mobile" : "titleCard";
+
   return (
-    <div className="titleCard">
+    <div className={titleCardClass}>
       <div className="name">
         <div className="first">Kathleen</div>
         <div className="last">Lister-Perlman</div>

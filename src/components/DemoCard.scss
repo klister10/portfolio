@@ -43,3 +43,26 @@
 .demoCard.clickable{
   cursor: pointer;
 }
+
+.demoCard.mobile {
+  .title{
+    font-size: 10vmin;
+  }
+  .thumbnail{
+    width: 84vmin;
+    height: 84vmin;
+    border-radius: 10vmin;
+    .videoPlayer{
+      border-radius: 8vmin;
+    }
+
+    .projectThumb{
+      border-radius: 8vmin;
+    }
+  }
+  .description {    
+    width: 80vmin;
+    font-size: 5vmin;
+    height: 22vmin;
+  }
+}
