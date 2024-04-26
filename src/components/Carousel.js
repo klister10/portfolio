@@ -19,9 +19,9 @@ const Carousel = ({ children }) => {
 
   return (
     <div className={carouselClass}>
-      <div onClick={goToPrevious} className='navButton'><FaAngleLeft/></div>
+      <div onClick={goToPrevious} className='navButton back'><FaAngleLeft/></div>
       <div className="carousel-content">{children[currentIndex]}</div>
-      <div onClick={goToNext} className='navButton'><FaAngleRight/></div>
+      <div onClick={goToNext} className='navButton forward'><FaAngleRight/></div>
     </div>
   );
 };

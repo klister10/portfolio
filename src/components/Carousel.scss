@@ -19,10 +19,20 @@
 
 .carousel.mobile {
   flex-direction: column;
+  max-height: 95vh;
 
   .navButton {
     transform: rotate(90deg);
     font-size: 30vmin;
+    position: absolute;
+  }
+
+  .navButton.forward {
+    bottom: -3vh;
+  }
+
+  .navButton.back {
+    top: -3vh;
   }
 
   .navButton:hover{
