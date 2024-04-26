@@ -6,35 +6,37 @@
   //background-color: rgba(138, 168, 146, 0.3);
   padding: 20px;
   border-radius: 30px;    
-  max-width: 51vmin;
+  //max-width: 51vmin;
   
   .title{
-    font-size: 5vmin;
+    font-size: 7vmin;
   }
   .thumbnail{
-    width: 50vmin;
-    height: 50vmin;
-    border-radius: 54px;
+    width: 65vmin;
+    height: 65vmin;
+    border-radius: 8vmin;
     margin-top: 2vmin;
     border: 4px solid #8AA892;
 
     .videoPlayer{
       width: 100%;
       height: 100%;
-      border-radius: 50px;
+      border-radius: 7.5vmin;
     }
 
     .projectThumb{
       object-fit: cover;
       width: 100%;
       height: 100%;
-      border-radius: 50px;
+      border-radius: 7.5vmin;
     }
   }
   .description {    
+    margin-top: 3vmin;
     text-align: center;
-    width: 42vmin;
+    width: 65vmin;
     height: 6vmin;
+    font-size: 3vmin;
   }
 }
 

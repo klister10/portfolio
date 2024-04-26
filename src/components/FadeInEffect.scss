@@ -1,0 +1,8 @@
+.fadeIn {
+  opacity: 0; /* Start with a hidden state */
+  transition: opacity 3s ease-in-out; /* Transition effect */
+}
+
+.fadeIn.visible {
+  opacity: 1; /* Fully visible */
+}

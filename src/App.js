@@ -6,6 +6,7 @@ import Carousel from './components/Carousel';
 import React, { useEffect, useState } from 'react';
 import { portfolioItems } from './data/portfolioItems';
 //import { isMobile } from './utils';
+import FadeInEffect from './components/FadeInEffect';
 
 
 
@@ -106,7 +107,7 @@ function App() {
     let content = [];
 
     //add title card;
-    content.push(<TitleCard />);
+    content.push(<FadeInEffect><TitleCard /></FadeInEffect>);
 
     //add portfolio items;
     for (let i = 0; i < portfolioItems.length; i++) {

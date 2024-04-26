@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
+import { isMobile } from '../utils';
 
 const Carousel = ({ children }) => {
   console.log("children: ", children);
@@ -14,8 +15,10 @@ const Carousel = ({ children }) => {
     setCurrentIndex((prevIndex) => (prevIndex === children.length - 1 ? 0 : prevIndex + 1));
   };
 
+  const carouselClass = isMobile() ? 'carousel mobile' : 'carousel';
+
   return (
-    <div className="carousel">
+    <div className={carouselClass}>
       <div onClick={goToPrevious} className='navButton'><FaAngleLeft/></div>
       <div className="carousel-content">{children[currentIndex]}</div>
       <div onClick={goToNext} className='navButton'><FaAngleRight/></div>
