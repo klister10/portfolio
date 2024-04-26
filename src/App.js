@@ -5,7 +5,7 @@ import DemoCard from './components/DemoCard';
 import Carousel from './components/Carousel';
 import React, { useEffect, useState } from 'react';
 import { portfolioItems } from './data/portfolioItems';
-import { isMobile } from './utils';
+//import { isMobile } from './utils';
 
 
 
@@ -17,7 +17,7 @@ function App() {
 
   // re-render on window resize to ensure leaves are properly placed
   useEffect(() => {
-    if(!isMobile()){
+    if(/*!isMobile()*/false){
       setLeafShiftOnMouseMove();
     }
 
@@ -120,7 +120,7 @@ function App() {
 
   return (
     <div className="App">
-      {!isMobile() && generateLeaves()}
+      {false/*!isMobile()*/ && generateLeaves()}
       <Carousel>
         {getCarouselContent()}
       </Carousel>
